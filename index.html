@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A NAVYA - Resume</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -71,6 +72,7 @@
             text-align: center;
             border-radius: 5px;
             text-decoration: none;
+            cursor: pointer;
         }
         .download-btn:hover {
             background-color: #0d0dff;
@@ -78,7 +80,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="resume-content">
 
         <!-- Contact Information -->
         <div class="contact-info">
@@ -115,12 +117,11 @@
         <!-- Experience -->
         <h2 class="section-title">Experience</h2>
 
+      
+
         <div class="content">
             <p class="job-title">Software Engineer - Rakuten India Enterprise Private Limited</p>
             <p class="job-location">Bengaluru, KA, India | 06/2024 - Present</p>
-        </div>
-
-        <div class="content">
             <p class="job-title">Associate Software Engineer - Rakuten Symphony</p>
             <p class="job-location">Bengaluru, KA, India | 09/2022 - 06/2024</p>
             <ul>
@@ -166,7 +167,22 @@
         </div>
 
         <!-- Download Link -->
-       <a href="path/to/A_Navya.pdf" class="download-btn" download>Download PDF</a>
+        <button class="download-btn" id="download-btn">Download as PDF</button>
     </div>
+
+    <script>
+        document.getElementById("download-btn").addEventListener("click", () => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const content = document.getElementById("resume-content");
+            doc.html(content, {
+                callback: function (doc) {
+                    doc.save("A_Navya_Resume.pdf");
+                },
+                x: 10,
+                y: 10
+            });
+        });
+    </script>
 </body>
 </html>
