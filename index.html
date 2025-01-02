@@ -6,6 +6,7 @@
     <title>A NAVYA - Resume</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <style>
+        /* Basic styling for the resume */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -30,7 +31,7 @@
             margin-bottom: 20px;
         }
         .contact-info p strong {
-            font-size: 25px; /* Adjust the value to make it bigger or smaller */
+            font-size: 25px;
             font-weight: bold;
             color: #333;
         }
@@ -40,12 +41,6 @@
             margin: 0 10px;
             display: inline-flex;
             align-items: center;
-        }
-        .contact-info svg {
-            width: 24px;
-            height: 24px;
-            margin: 0 8px;
-            vertical-align: middle;
         }
         .section-title {
             font-weight: bold;
@@ -88,18 +83,6 @@
         .download-btn:hover {
             background-color: #0d0dff;
         }
-
-        /* Education Section Flexbox */
-        .education {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .education-location {
-            text-align: right;
-            color: #777;
-        }
     </style>
 </head>
 <body>
@@ -110,11 +93,13 @@
             <p><strong>A NAVYA</strong></p>
             <p>
                 <a href="https://www.linkedin.com/in/a-navya-147224183/" target="_blank">
+                    <!-- LinkedIn SVG Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077B5">
                         <path d="M23 24h-4v-8.5c0-2.037-.744-3.5-2.587-3.5-1.426 0-2.316.958-2.693 1.886-.147.356-.183.85-.183 1.352V24h-4V9.5h4v1.966c.658-.897 1.843-2.189 4.108-2.189 3.002 0 5.003 2.057 5.003 6.492V24zM3 9.5H7v14H3V9.5zM5 7.828a2.828 2.828 0 1 1 0-5.656 2.828 2.828 0 0 1 0 5.656z"></path>
                     </svg>
                 </a>
                 <a href="mailto:anavyanaidu@gmail.com">
+                    <!-- Gmail SVG Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#D93025">
                         <path d="M21 6.5l-9 6-9-6V4l9 6 9-6v2.5z"></path>
                         <path d="M21 8.5l-9 6-9-6V21l9-6 9 6V8.5z"></path>
@@ -135,82 +120,31 @@
             </ul>
         </div>
 
-        <!-- Experience -->
-        <h2 class="section-title">Experience</h2>
-
-        <div class="content">
-            <div class="job">
-                <p class="job-title">Software Engineer - Rakuten India Enterprise Private Limited</p>
-                <p class="job-location">Bengaluru, KA, India | 06/2024 - Present</p>
-            </div>
-            <div class="job">
-                <p class="job-title">Associate Software Engineer - Rakuten Symphony</p>
-                <p class="job-location">Bengaluru, KA, India | 09/2022 - 06/2024</p>
-            </div>
-            <ul>
-                <li>Contributed to the Java-based backend development of the core Order Management Service of the MNO B2B BSS system.</li>
-                <li>Led the development of several features, from identifying system requirements and partner dependencies to software implementation, engineering, testing, and configuring metrics, monitors, and dashboards.</li>
-                <li>Designed and implemented scalable APIs that communicate with internal and external systems of BSS.</li>
-                <li>Led development and implementation of scalable microservice architecture, contributing to a remarkable business expansion from 100 line orders to 1 million in two years.</li>
-                <li>Contributed to refactoring the Order Management and its wrapper services, enabling high availability and enhancing fault tolerance capabilities.</li>
-                <li>Developed a real-time analytics dashboard using Spring Boot that helps management make data-driven decisions.</li>
-                <li>Enriched system metrics by integrating the platform’s logging and monitoring system using ELK stack.</li>
-                <li>Continuous Integration/Deployment Pipeline Integration, Pull requests, Code reviews, Load/Stress testing, Unit/Integration/E2E testing.</li>
-                <li>Tech Stack used: Java, Spring Boot, Couchbase, MySQL, Kafka, Docker, Kubernetes etc.</li>
-            </ul>
-        </div>
-
-        <div class="content">
-            <div class="job">
-                <p class="job-title">Project Engineer - Wipro Limited</p>
-                <p class="job-location">Bengaluru, KA, India | 03/2021 - 08/2022</p>
-            </div>
-            <ul>
-                <li>Contributed to the Java-based backend development of the BRECO Service of the FEDEX system.</li>
-                <li>Built and Deployed multiple Microservices from the development stage to the production stage.</li>
-                <li>Designed and integrated services using REST APIs within a component-based architecture.</li>
-                <li>Tech Stack used: Java, Spring Boot, REST, Jenkins, PCF, Junits, Splunk etc.</li>
-            </ul>
-        </div>
-
-        <!-- Honors & Awards -->
-        <h2 class="section-title">Honors & Awards</h2>
-        <div class="content">
-            <ul>
-                <li>Best Performer of Quarter Q1 2024 issued by Rakuten Symphony.</li>
-                <li>Best Performer of Quarter Q4 2022 issued by Wipro.</li>
-                <li>Best Performer of Quarter Q3 2021 issued by Wipro.</li>
-            </ul>
-        </div>
-
-        <!-- Education -->
-        <h2 class="section-title">Education</h2>
-        <div class="content">
-            <div class="education">
-                <p><strong>Bachelor of Technology - Siddartha Institute of Science and Technology</strong></p>
-                <p class="education-location">Puttur, AP, India | 06/2016 - 09/2020</p>
-            </div>
-            <p style="margin-top: 0;">Graduate in Computer Science</p>
-        </div>
-
         <!-- Download Link -->
         <button class="download-btn" id="download-btn">Download as PDF</button>
     </div>
 
     <script>
-        document.getElementById("download-btn").addEventListener("click", () => {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
+        document.getElementById("download-btn").addEventListener("click", function() {
+            try {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
 
-            const content = document.getElementById("resume-content");
-            doc.html(content, {
-                callback: function (doc) {
-                    doc.save("A_Navya_Resume.pdf");
-                },
-                x: 10,
-                y: 10,
-                autoPaging: true
-            });
+                // Grab content for PDF export
+                const content = document.getElementById("resume-content");
+
+                // Convert HTML to PDF
+                doc.html(content, {
+                    callback: function (doc) {
+                        doc.save("A_Navya_Resume.pdf");
+                    },
+                    x: 10,
+                    y: 10,
+                    autoPaging: true // Ensure content doesn't overflow
+                });
+            } catch (error) {
+                console.error("An error occurred while generating the PDF:", error);
+            }
         });
     </script>
 </body>
