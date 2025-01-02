@@ -52,12 +52,18 @@
         .content {
             margin-bottom: 20px;
         }
+        .job {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .job-title {
             font-weight: bold;
             color: #555;
         }
         .job-location {
             color: #777;
+            text-align: right;
         }
         ul {
             padding-left: 20px;
@@ -117,13 +123,15 @@
         <!-- Experience -->
         <h2 class="section-title">Experience</h2>
 
-      
-
         <div class="content">
-            <p class="job-title">Software Engineer - Rakuten India Enterprise Private Limited</p>
-            <p class="job-location">Bengaluru, KA, India | 06/2024 - Present</p>
-            <p class="job-title">Associate Software Engineer - Rakuten Symphony</p>
-            <p class="job-location">Bengaluru, KA, India | 09/2022 - 06/2024</p>
+            <div class="job">
+                <p class="job-title">Software Engineer - Rakuten India Enterprise Private Limited</p>
+                <p class="job-location">Bengaluru, KA, India | 06/2024 - Present</p>
+            </div>
+            <div class="job">
+                <p class="job-title">Associate Software Engineer - Rakuten Symphony</p>
+                <p class="job-location">Bengaluru, KA, India | 09/2022 - 06/2024</p>
+            </div>
             <ul>
                 <li>Contributed to the Java-based backend development of the core Order Management Service of the MNO B2B BSS system.</li>
                 <li>Led the development of several features, from identifying system requirements and partner dependencies to software implementation, engineering, testing, and configuring metrics, monitors, and dashboards.</li>
@@ -138,8 +146,10 @@
         </div>
 
         <div class="content">
-            <p class="job-title">Project Engineer - Wipro Limited</p>
-            <p class="job-location">Bengaluru, KA, India | 03/2021 - 08/2022</p>
+            <div class="job">
+                <p class="job-title">Project Engineer - Wipro Limited</p>
+                <p class="job-location">Bengaluru, KA, India | 03/2021 - 08/2022</p>
+            </div>
             <ul>
                 <li>Contributed to the Java-based backend development of the BRECO Service of the FEDEX system.</li>
                 <li>Built and Deployed multiple Microservices from the development stage to the production stage.</li>
