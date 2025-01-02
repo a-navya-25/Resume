@@ -37,9 +37,9 @@
             align-items: center;
         }
         .contact-info svg {
-            width: 24px; /* Adjust size as needed */
+            width: 24px;
             height: 24px;
-            margin: 0 8px; /* Space between icons */
+            margin: 0 8px;
             vertical-align: middle;
         }
         .section-title {
@@ -82,6 +82,18 @@
         }
         .download-btn:hover {
             background-color: #0d0dff;
+        }
+
+        /* Education Section Flexbox */
+        .education {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .education-location {
+            text-align: right;
+            color: #777;
         }
     </style>
 </head>
@@ -171,9 +183,10 @@
         <!-- Education -->
         <h2 class="section-title">Education</h2>
         <div class="content">
-            <p><strong>Bachelor of Technology - Siddartha Institute of Science and Technology</strong></p>
-            <p>Puttur, AP, India | 06/2016 - 09/2020</p>
-            <p>Graduate in Computer Science</p>
+            <div class="education">
+                <p><strong>Bachelor of Technology - Siddartha Institute of Science and Technology</strong></p>
+                <p class="education-location">Puttur, AP, India | 06/2016 - 09/2020</p>
+            </div>
         </div>
 
         <!-- Download Link -->
