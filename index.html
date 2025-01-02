@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A NAVYA - Resume</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> <!-- Added html2canvas -->
     <style>
-        /* Basic styling for the resume */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -31,7 +31,7 @@
             margin-bottom: 20px;
         }
         .contact-info p strong {
-            font-size: 25px;
+            font-size: 25px; /* Adjust the value to make it bigger or smaller */
             font-weight: bold;
             color: #333;
         }
@@ -41,6 +41,12 @@
             margin: 0 10px;
             display: inline-flex;
             align-items: center;
+        }
+        .contact-info svg {
+            width: 24px;
+            height: 24px;
+            margin: 0 8px;
+            vertical-align: middle;
         }
         .section-title {
             font-weight: bold;
@@ -83,6 +89,18 @@
         .download-btn:hover {
             background-color: #0d0dff;
         }
+
+        /* Education Section Flexbox */
+        .education {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .education-location {
+            text-align: right;
+            color: #777;
+        }
     </style>
 </head>
 <body>
@@ -118,6 +136,64 @@
                 <li>Spring Boot | Kafka | CI/CD | Unit Testing | OOP | Kubernetes | Docker | Git | Camunda</li>
                 <li>Data Structure | Algorithms | Microservices | Distributed Systems | System Design | Backend</li>
             </ul>
+        </div>
+
+        <!-- Experience -->
+        <h2 class="section-title">Experience</h2>
+
+        <div class="content">
+            <div class="job">
+                <p class="job-title">Software Engineer - Rakuten India Enterprise Private Limited</p>
+                <p class="job-location">Bengaluru, KA, India | 06/2024 - Present</p>
+            </div>
+            <div class="job">
+                <p class="job-title">Associate Software Engineer - Rakuten Symphony</p>
+                <p class="job-location">Bengaluru, KA, India | 09/2022 - 06/2024</p>
+            </div>
+            <ul>
+                <li>Contributed to the Java-based backend development of the core Order Management Service of the MNO B2B BSS system.</li>
+                <li>Led the development of several features, from identifying system requirements and partner dependencies to software implementation, engineering, testing, and configuring metrics, monitors, and dashboards.</li>
+                <li>Designed and implemented scalable APIs that communicate with internal and external systems of BSS.</li>
+                <li>Led development and implementation of scalable microservice architecture, contributing to a remarkable business expansion from 100 line orders to 1 million in two years.</li>
+                <li>Contributed to refactoring the Order Management and its wrapper services, enabling high availability and enhancing fault tolerance capabilities.</li>
+                <li>Developed a real-time analytics dashboard using Spring Boot that helps management make data-driven decisions.</li>
+                <li>Enriched system metrics by integrating the platform’s logging and monitoring system using ELK stack.</li>
+                <li>Continuous Integration/Deployment Pipeline Integration, Pull requests, Code reviews, Load/Stress testing, Unit/Integration/E2E testing.</li>
+                <li>Tech Stack used: Java, Spring Boot, Couchbase, MySQL, Kafka, Docker, Kubernetes etc.</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="job">
+                <p class="job-title">Project Engineer - Wipro Limited</p>
+                <p class="job-location">Bengaluru, KA, India | 03/2021 - 08/2022</p>
+            </div>
+            <ul>
+                <li>Contributed to the Java-based backend development of the BRECO Service of the FEDEX system.</li>
+                <li>Built and Deployed multiple Microservices from the development stage to the production stage.</li>
+                <li>Designed and integrated services using REST APIs within a component-based architecture.</li>
+                <li>Tech Stack used: Java, Spring Boot, REST, Jenkins, PCF, Junits, Splunk etc.</li>
+            </ul>
+        </div>
+
+        <!-- Honors & Awards -->
+        <h2 class="section-title">Honors & Awards</h2>
+        <div class="content">
+            <ul>
+                <li>Best Performer of Quarter Q1 2024 issued by Rakuten Symphony.</li>
+                <li>Best Performer of Quarter Q4 2022 issued by Wipro.</li>
+                <li>Best Performer of Quarter Q3 2021 issued by Wipro.</li>
+            </ul>
+        </div>
+
+        <!-- Education -->
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+            <div class="education">
+                <p><strong>Bachelor of Technology - Siddartha Institute of Science and Technology</strong></p>
+                <p class="education-location">Puttur, AP, India | 06/2016 - 09/2020</p>
+            </div>
+            <p style="margin-top: 0;">Graduate in Computer Science</p>
         </div>
 
         <!-- Download Link -->
