@@ -206,7 +206,7 @@
                 useCORS: true,
                 logging: true,
                 scale: 2
-            }).then(function(canvas) {
+            }, function(canvas) {
                 const { jsPDF } = window.jspdf;
                 const pdf = new jsPDF('p', 'mm', 'a4');
                 const imgData = canvas.toDataURL('image/png');
