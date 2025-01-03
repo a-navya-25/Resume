@@ -200,14 +200,15 @@
  <button class="download-btn" id="download-btn">Download as PDF</button> 
     </div>
 
+
 <script>
-    // JavaScript to handle button click
     document.getElementById('download-btn').addEventListener('click', function () {
         const link = document.createElement('a'); // Create an <a> element
-        link.href = 'A_Navya_Resume.pdf'; // Set the href to the PDF file
-        link.download = 'A_Navya'; // Set the download attribute
-        link.click(); // Programmatically click the link to trigger the download
+        link.href = './A_Navya_Resume.pdf'; // File path relative to index.html
+        link.download = 'A_Navya'; // Set the download filename
+        link.click(); // Programmatically trigger the download
     });
 </script>
+
 </body>
 </html>
